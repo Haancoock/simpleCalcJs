@@ -6,10 +6,9 @@
   "repository": "https://github.com/Haancoock/simpleCalcJs.git",
   "author": "Alim <Haancoock123@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "gulp": "^3.9.1"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "browser-sync": "^2.23.7"
+    "browser-sync": "^2.23.7",
+    "gulp": "^3.9.1"
   }
 }
