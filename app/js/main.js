@@ -52,7 +52,7 @@ function numberPress(num){
 };
 
 function operation(oper){
-	localMemoryOperation = display.value;
+	var localMemoryOperation = display.value;
 
 	if (MemoryNewNumber && MemoryPendingOperation !== '=') {
 		display.value = MemoryCurrentNumner;
@@ -71,19 +71,32 @@ function operation(oper){
 		};
 		display.value = MemoryCurrentNumner;
 		MemoryPendingOperation = oper;
-	}
-
-	console.log('клик по операции ' + oper + '!');
-}
+	};
+};
 
 function decimal(arg){
-	console.log('клик по точке');
-}
+	var  localDecimalMemory = display.value;
+
+	if (MemoryNewNumber) {
+		localDecimalMemory = '0.';
+		MemoryNewNumber = false;
+	}else{
+		if (localDecimalMemory.indexOf('.') === -1) {
+			localDecimalMemory += '.';
+		};
+		
+	};
+	display.value = localDecimalMemory;
+};
 
 function clear(id){
-	console.log('клик по ' + id + ' !');
-}
-
-function result(arg){
-	console.log('клик по кнопке равно');
-}
+	if (id === 'ce') {
+		display.value = '0';
+		MemoryNewNumber = true;
+	}else if (id === 'c') {
+		display.value = '0';
+		MemoryNewNumber = true;
+		MemoryCurrentNumner = 0;
+		MemoryPendingOperation = '';
+	};
+};
